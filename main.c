@@ -5,20 +5,22 @@ int main() {
 
     char nombres[10][50];
     float precios[10];
-    int cantidad;
+    int numProductos;
 
-    cantidad = ingresarDatos(nombres, precios);
+    printf("--- SISTEMA DE GESTION DE INVENTARIO ---\n");
 
-    if(cantidad > 0) {
-        printf("\nRESULTADO\n ");
-        printf("\nTotal en inventario: $%.2f", calcularTotal(precios, cantidad));
-        printf("\nPrecio promedio: $%.2f", calcularPromedio(precios, cantidad));
-        
-        encontrarExtremos(nombres, precios, cantidad);
-        buscarProducto(nombres, precios, cantidad);
-    } else {
-        printf("No hay productos registrados.\n");
-    }
+
+    numProductos = ingresarDatos(nombres, precios);
+
+    float total = calcularTotal(precios, numProductos);
+    printf("\nValor total del inventario: $%.2f\n", total);
+
+    float promedio = calcularPromedio(precios, numProductos);
+    printf("Precio promedio de los productos: $%.2f\n", promedio);
+
+    encontrarExtremos(nombres, precios, numProductos);
+
+    buscarProducto(nombres, precios, numProductos);
 
     return 0;
 }
