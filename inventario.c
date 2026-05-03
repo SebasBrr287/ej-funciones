@@ -5,8 +5,15 @@
 
 int ingresarDatos(char nombres[10][50], float precios[]) {
     int n;
-    printf("¿Cuantos productos desea ingresar? (Max 10): ");
-    scanf("%d", &n);
+    
+    do {
+        printf("¿Cuantos productos desea ingresar? (1-10): ");
+        scanf("%d", &n);
+        
+        if (n < 1 || n > 10) {
+            printf("Error: El numero debe estar entre 1 y 10.\n");
+        }
+    } while (n < 1 || n > 10);
     
     for(int i = 0; i < n; i++) {
         printf("Nombre del producto %d: ", i + 1);
@@ -15,6 +22,7 @@ int ingresarDatos(char nombres[10][50], float precios[]) {
         scanf("%f", &precios[i]); 
     }
     return n; 
+}
 }
 
 float calcularTotal(float precios[], int n) {
