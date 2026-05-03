@@ -7,8 +7,6 @@ int main() {
     float precios[10];
     int numProductos;
 
-    printf("--- SISTEMA DE GESTION DE INVENTARIO ---\n");
-
 
     numProductos = ingresarDatos(nombres, precios);
 
