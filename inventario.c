@@ -23,6 +23,7 @@ int ingresarDatos(char nombres[10][50], float precios[]) {
     }
     return n; 
 }
+}
 
 float calcularTotal(float precios[], int n) {
     float suma = 0;
